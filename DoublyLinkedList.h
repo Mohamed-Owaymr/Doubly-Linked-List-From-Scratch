@@ -76,6 +76,8 @@ public:
 
     void updateItem(size_t index , Type newValue);
 
+    ~DoublyLinkedList();
+
 
     // for testing
     void display() {
@@ -425,4 +427,9 @@ template <typename Type>
 void DoublyLinkedList<Type>::updateItem(size_t index , Type newValue) {
     Node* target = getNodeByIndex(index);
     target->setData(newValue);
+}
+
+template <typename Type>
+DoublyLinkedList<Type>::~DoublyLinkedList() {
+    clear();
 }
